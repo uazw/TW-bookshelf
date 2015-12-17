@@ -22,14 +22,20 @@ public class BookShelfController {
         ModelMap model = new ModelMap();
         model.put("books", bookService.findAll());
         return new ModelAndView("books", model);
-
     }
 
     @RequestMapping(value = "book/{isbn}", method = RequestMethod.GET)
-    public Book getBook(@PathVariable String isbn) {
+    public ModelAndView getBook(@PathVariable String isbn) {
 
-        return bookService.findByIsbn(isbn);
+        ModelMap model = new ModelMap();
+        model.put("books", bookService.findByIsbn(isbn));
+        return new ModelAndView("books", model);
+    }
 
+    @RequestMapping(value = "book", method = RequestMethod.POST)
+    public String appendBook(Book book) {
+        bookService.appendBook(book);
+        return "redirect:book/" + book.getIsbn();
     }
 
     @RequestMapping(value = "book/new", method = RequestMethod.GET)
