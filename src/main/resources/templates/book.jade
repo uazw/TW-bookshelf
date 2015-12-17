@@ -1,46 +1,28 @@
 doctype html
 html(lang-en)
     head
+    link(rel="stylesheet", type="text/css", href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css")
+    script(src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js")
     body
-        h1 hello
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
-    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
-</head>
-<body>
-<div class="container">
-    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+        div#container
+            h2 Book Details
+            div
+                form.form-horizontal
+                    div.form-group
+                        label(class='col-sm-2 control-label') Book ISBN:
+                        div.col-sm-10
+                            p.form-control-static= book.isbn
+                   div.form-group
+                        label(class='col-sm-2 control-label') Name:
+                        div.col-sm-10
+                            p.form-control-static= book.name
 
-    <h2>Book Details</h2>
-        <div>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Book ISBN:</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static" th:text="${book.isbn}">Book ISBN</p></div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Name:</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static" th:text="${book.name}">Name</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Author:</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static" th:text="${book.author}">author</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Price:</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static" th:text="${book.price}">Price</p>
-                    </div>
-                </div>
-            </form>
-    </div>
-</div>
+                   div.form-group
+                        label(class='col-sm-2 control-label') Book ISBN:
+                        div.col-sm-10
+                            p.form-control-static= book.author
 
-</body>
-</html>
+                   div.form-group
+                        label(class='col-sm-2 control-label') Book ISBN:
+                        div.col-sm-10
+                            p.form-control-static= book.price

@@ -28,8 +28,8 @@ public class BookShelfController {
     public ModelAndView getBook(@PathVariable String isbn) {
 
         ModelMap model = new ModelMap();
-        model.put("books", bookService.findByIsbn(isbn));
-        return new ModelAndView("books", model);
+        model.put("book", bookService.findByIsbn(isbn));
+        return new ModelAndView("/book", model);
     }
 
     @RequestMapping(value = "book", method = RequestMethod.POST)
