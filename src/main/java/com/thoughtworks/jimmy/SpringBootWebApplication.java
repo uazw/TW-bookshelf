@@ -15,7 +15,6 @@ public class SpringBootWebApplication {
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(SpringBootWebApplication.class, args);
 
-
         Arrays.stream(ctx.getBeanDefinitionNames()).sorted().forEach(System.out::println);
 
     }

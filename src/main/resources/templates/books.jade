@@ -1,0 +1,27 @@
+extend ./layout.jade
+
+block content
+    h2 Book List
+    table(class='table table-striped')
+        tr
+            th Book ISBN
+            th Name
+            th Author
+            th Price
+            th View
+            th Edit
+            th Delete
+
+        each book in books
+            tr
+                td
+                    a(href='/book/' + book.isbn)= book.isbn
+                td=book.name
+                td=book.author
+                td=book.price
+                td
+                    a(href='/book/' + book.isbn) View
+                td
+                    a(href='/book/edit/' + book.isbn) Edit
+                td
+                    a(href='/book/delete/' + book.isbn) Delete

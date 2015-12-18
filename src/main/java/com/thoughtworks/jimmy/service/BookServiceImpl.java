@@ -30,4 +30,14 @@ public class BookServiceImpl implements BookService {
         bookRepository.add(book);
     }
 
+    @Override
+    public void edit(Book book) {
+        bookRepository.update(book);
+    }
+
+    @Override
+    public void deleteByIsbn(String isbn) {
+        bookRepository.deleteByIsbn(isbn);
+    }
+
 }

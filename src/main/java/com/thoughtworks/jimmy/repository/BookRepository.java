@@ -29,4 +29,12 @@ public class BookRepository {
     public void add(Book book) {
         BOOKS_MAP.put(book.getIsbn(), book);
     }
+
+    public void update(Book book) {
+        BOOKS_MAP.put(book.getIsbn(), book);
+    }
+
+    public void deleteByIsbn(String isbn) {
+        BOOKS_MAP.remove(isbn);
+    }
 }
