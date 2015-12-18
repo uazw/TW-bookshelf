@@ -3,9 +3,11 @@ package com.thoughtworks.jimmy.service;
 import com.thoughtworks.jimmy.model.Book;
 import com.thoughtworks.jimmy.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile("dev")
 public class BookServiceImpl implements BookService {
 
     private BookRepository bookRepository;
